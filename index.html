@@ -33,64 +33,19 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/4.1.2/papaparse.js"></script>
-	<script type="text/javascript">
-		$.get('/file-path/seriperantaupattern3p.csv', function (data) {
-			var build = '<table border="1" cellpadding="2" cellspacing="0" style="border-collapse: collapse" width="100%">\n';
-			var head = data.split("\n");
-			for (var i = 0; i < 1; i++) {
-				build += "<tr><th>" + head[i] + "</th></tr>";
-				for (var i = 1; i < head.length; i++) {
-					build += "<tr><td>" + head[i].split("\n") + "</td></tr>";
-				}
-			}
-			build += "</table>";
-			$('#wrap').append(build);
-		});
-	</script>
 	<script>
-		const min = '2024-03-22T00:00';
-		const max = '2024-09-22T00:00';
+		// Read the JSON file 
+		let jsonData = JSON.parse(fs.readFileSync("cleaningduty.json"));
+		
+		let text = '{ "firstName":"John" , "lastName":"Doe" }'; 
 
-		$('#demo-booking-single').mobiscroll().datepicker({
-			display: 'inline',
-			controls: ['calendar'],
-			min: min,
-			max: max,
-			onPageLoading: function (event, inst) {
-				getPrices(event.firstDay, function callback(bookings) {
-					inst.setOptions({
-						labels: bookings.labels,
-						invalid: bookings.invalid
-					});
-				});
-			}
-		});
+		// Add or edit data 
+		jsonData.newData = text;
 
-		function getPrices(d, callback) {
-			var invalid = [],
-				labels = [];
-
-			mobiscroll.getJson('//trial.mobiscroll.com/getprices/?year=' + d.getFullYear() + '&month=' + d.getMonth(), function (bookings) {
-				for (var i = 0; i < bookings.length; ++i) {
-					var booking = bookings[i],
-						d = new Date(booking.d);
-
-					if (booking.price > 0) {
-						labels.push({
-							start: d,
-							title: '$' + booking.price,
-							textColor: '#e1528f'
-						});
-					} else {
-						invalid.push(d);
-					}
-				}
-				callback({ labels: labels, invalid: invalid });
-			}, 'jsonp');
-		}
+		// Write the JSON file 
+		fs.writeFileSync("data.json", JSON.stringify(jsonData)); 
 	</script>
+
 </body>
 
 </html>
