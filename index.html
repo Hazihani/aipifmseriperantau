@@ -22,6 +22,8 @@
 	</div>
 	<div class="container">
 		<!-- Laundry Booking -->
+		<div id="demo-booking-single"></div>
+
 	</div>
 	<script src="https://code.jquery.com/jquery-3.7.1.js"
 		integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
@@ -46,6 +48,48 @@
 			build += "</table>";
 			$('#wrap').append(build);
 		});
+	</script>
+	<script>
+		const min = '2024-03-22T00:00';
+		const max = '2024-09-22T00:00';
+
+		$('#demo-booking-single').mobiscroll().datepicker({
+			display: 'inline',
+			controls: ['calendar'],
+			min: min,
+			max: max,
+			onPageLoading: function (event, inst) {
+				getPrices(event.firstDay, function callback(bookings) {
+					inst.setOptions({
+						labels: bookings.labels,
+						invalid: bookings.invalid
+					});
+				});
+			}
+		});
+
+		function getPrices(d, callback) {
+			var invalid = [],
+				labels = [];
+
+			mobiscroll.getJson('//trial.mobiscroll.com/getprices/?year=' + d.getFullYear() + '&month=' + d.getMonth(), function (bookings) {
+				for (var i = 0; i < bookings.length; ++i) {
+					var booking = bookings[i],
+						d = new Date(booking.d);
+
+					if (booking.price > 0) {
+						labels.push({
+							start: d,
+							title: '$' + booking.price,
+							textColor: '#e1528f'
+						});
+					} else {
+						invalid.push(d);
+					}
+				}
+				callback({ labels: labels, invalid: invalid });
+			}, 'jsonp');
+		}
 	</script>
 </body>
 
