@@ -17,7 +17,18 @@
 	<div class="container">
 		<!-- Cleaning Schedule -->
 		<script>
-			arrayToTable();
+			var curr = new Date; // get current date
+			var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
+			var last = first + 6; // last day is the first day + 6
+
+			var firstday = new Date(curr.setDate(first)).toUTCString();
+			var lastday = new Date(curr.setDate(last)).toUTCString();
+
+			firstday
+			"Sun, 06 Mar 2011 12:25:40 GMT"
+			lastday
+			"Sat, 12 Mar 2011 12:25:40 GMT"
+
 		</script>
 	</div>
 	<div class="container">
@@ -33,19 +44,6 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
-	<script>
-		// Read the JSON file 
-		const data = fs.readFileSync('laundrybooking.json');
-
-		const jsonData = JSON.parse(data);
-
-		// Add or edit data 
-		jsonData.laundrybooks.push({
-			resident: 'Atul',
-			date: '22/03/2024',
-			// or any other data we want to add in that object
-		});
-	</script>
 
 </body>
 
