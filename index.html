@@ -12,22 +12,23 @@
 <body>
 	<center>
 		<h1>AIPI Feedmill</h1>
-		<h2>Pangsapuri Seri Perantau Residents 3</h2>
+		<h2>Pangsapuri Seri Perantau Residents</h2>
 	</center>
 	<div class="container">
 		<!-- Cleaning Schedule -->
 		<script>
-			var curr = new Date; // get current date
-			var first = curr.getDate() - curr.getDay(); // First day is the day of the month - the day of the week
-			var last = first + 6; // last day is the first day + 6
+			Date.prototype.GetFirstDayOfWeek = function () {
+				return (new Date(this.setDate(this.getDate() - this.getDay() + (this.getDay() == 0 ? -6 : 1))));
+			}
+			Date.prototype.GetLastDayOfWeek = function () {
+				return (new Date(this.setDate(this.getDate() - this.getDay() + 7)));
+			}
 
-			var firstday = new Date(curr.setDate(first)).toUTCString();
-			var lastday = new Date(curr.setDate(last)).toUTCString();
+			var today = new Date();
 
-			firstday
-			"Sun, 06 Mar 2011 12:25:40 GMT"
-			lastday
-			"Sat, 12 Mar 2011 12:25:40 GMT"
+			alert(today.GetFirstDayOfWeek());
+
+			alert(today.GetLastDayOfWeek());
 
 		</script>
 	</div>
