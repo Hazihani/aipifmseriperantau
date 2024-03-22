@@ -1,86 +1,175 @@
-[
-	{
-	  "Week": "Week 1",
-	  "Hazirah": [6],
-	  "Nahayu": [2],
-	  "Rabiatul": [1,3],
-	  "Corridor": 1
-	},
-	{
-	  "Week": "Week 2",
-	  "Hazirah": [1],
-	  "Nahayu": [6],
-	  "Rabiatul": [2,7],
-	  "Corridor": 0
-	},
-	{
-	  "Week": "Week 3",
-	  "Hazirah": [2,5],
-	  "Nahayu": [1,3],
-	  "Rabiatul": [6],
-	  "Corridor": 0
-	},
-	{
-	  "Week": "Week 4",
-	  "Hazirah": [6],
-	  "Nahayu": [2],
-	  "Rabiatul": [1,4],
-	  "Corridor": 0
-	},
-	{
-	  "Week": "Week 5",
-	  "Hazirah": [1,3],
-	  "Nahayu": [6],
-	  "Rabiatul": [2],
-	  "Corridor": 1
-	},
-	{
-	  "Week": "Week 6",
-	  "Hazirah": [2,7],
-	  "Nahayu": [1],
-	  "Rabiatul": [6],
-	  "Corridor": 0
-	},
-	{
-	  "Week": "Week 7",
-	  "Hazirah": [6],
-	  "Nahayu": [2,5],
-	  "Rabiatul": [1,3],
-	  "Corridor": 0
-	},
-	{
-	  "Week": "Week 8",
-	  "Hazirah": [1,4],
-	  "Nahayu": [6],
-	  "Rabiatul": [2],
-	  "Corridor": 0
-	},
-	{
-	  "Week": "Week 9",
-	  "Hazirah": [2],
-	  "Nahayu": [1,3],
-	  "Rabiatul": [6],
-	  "Corridor": 1
-	},
-	{
-	  "Week": "Week 10",
-	  "Hazirah": [6],
-	  "Nahayu": [2,7],
-	  "Rabiatul": [1],
-	  "Corridor": 0
-	},
-	{
-	  "Week": "Week 11",
-	  "Hazirah": [1,3],
-	  "Nahayu": [6],
-	  "Rabiatul": [2,5],
-	  "Corridor": 0
-	},
-	{
-	  "Week": "Week 12",
-	  "Hazirah": [2],
-	  "Nahayu": [1,4],
-	  "Rabiatul": [6],
-	  "Corridor": 0
-	}
-  ]
+{
+	"weekduties": [
+		{
+			"Week": "Week 1",
+			"Hazirah": [
+				6
+			],
+			"Nahayu": [
+				2
+			],
+			"Rabiatul": [
+				1,
+				3
+			],
+			"Corridor": 1
+		},
+		{
+			"Week": "Week 2",
+			"Hazirah": [
+				1
+			],
+			"Nahayu": [
+				6
+			],
+			"Rabiatul": [
+				2,
+				7
+			],
+			"Corridor": 0
+		},
+		{
+			"Week": "Week 3",
+			"Hazirah": [
+				2,
+				5
+			],
+			"Nahayu": [
+				1,
+				3
+			],
+			"Rabiatul": [
+				6
+			],
+			"Corridor": 0
+		},
+		{
+			"Week": "Week 4",
+			"Hazirah": [
+				6
+			],
+			"Nahayu": [
+				2
+			],
+			"Rabiatul": [
+				1,
+				4
+			],
+			"Corridor": 0
+		},
+		{
+			"Week": "Week 5",
+			"Hazirah": [
+				1,
+				3
+			],
+			"Nahayu": [
+				6
+			],
+			"Rabiatul": [
+				2
+			],
+			"Corridor": 1
+		},
+		{
+			"Week": "Week 6",
+			"Hazirah": [
+				2,
+				7
+			],
+			"Nahayu": [
+				1
+			],
+			"Rabiatul": [
+				6
+			],
+			"Corridor": 0
+		},
+		{
+			"Week": "Week 7",
+			"Hazirah": [
+				6
+			],
+			"Nahayu": [
+				2,
+				5
+			],
+			"Rabiatul": [
+				1,
+				3
+			],
+			"Corridor": 0
+		},
+		{
+			"Week": "Week 8",
+			"Hazirah": [
+				1,
+				4
+			],
+			"Nahayu": [
+				6
+			],
+			"Rabiatul": [
+				2
+			],
+			"Corridor": 0
+		},
+		{
+			"Week": "Week 9",
+			"Hazirah": [
+				2
+			],
+			"Nahayu": [
+				1,
+				3
+			],
+			"Rabiatul": [
+				6
+			],
+			"Corridor": 1
+		},
+		{
+			"Week": "Week 10",
+			"Hazirah": [
+				6
+			],
+			"Nahayu": [
+				2,
+				7
+			],
+			"Rabiatul": [
+				1
+			],
+			"Corridor": 0
+		},
+		{
+			"Week": "Week 11",
+			"Hazirah": [
+				1,
+				3
+			],
+			"Nahayu": [
+				6
+			],
+			"Rabiatul": [
+				2,
+				5
+			],
+			"Corridor": 0
+		},
+		{
+			"Week": "Week 12",
+			"Hazirah": [
+				2
+			],
+			"Nahayu": [
+				1,
+				4
+			],
+			"Rabiatul": [
+				6
+			],
+			"Corridor": 0
+		}
+	]
+}

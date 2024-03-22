@@ -35,15 +35,16 @@
 		crossorigin="anonymous"></script>
 	<script>
 		// Read the JSON file 
-		let jsonData = JSON.parse(fs.readFileSync("laundrybooking.json"));
-		
-		let text = '{ "firstName":"John" , "lastName":"Doe" }'; 
+		const data = fs.readFileSync('laundrybooking.json');
+
+		const jsonData = JSON.parse(data);
 
 		// Add or edit data 
-		jsonData.newData = text;
-
-		// Write the JSON file 
-		fs.writeFileSync("data.json", JSON.stringify(jsonData)); 
+		jsonData.laundrybooks.push({
+			resident: 'Atul',
+			date: '22/03/2024',
+			// or any other data we want to add in that object
+		});
 	</script>
 
 </body>
