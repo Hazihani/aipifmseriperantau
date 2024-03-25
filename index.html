@@ -17,6 +17,22 @@
 	<div class="container">
 		<!-- Cleaning Schedule -->
 		<script>
+			function fetchJSONData() {
+				fetch("cleaningduty.json")
+					.then((res) => {
+						if (!res.ok) {
+							throw new Error
+								(`HTTP error! Status: ${res.status}`);
+						}
+						return res.json();
+					})
+					.then((data) =>
+						console.log(data))
+					.catch((error) =>
+						console.error("Unable to fetch data:", error));
+			}
+			fetchJSONData();
+
 			Date.prototype.GetFirstDayOfWeek = function () {
 				return (new Date(this.setDate(this.getDate() - this.getDay() + (this.getDay() == 0 ? -6 : 1))));
 			}
