@@ -17,20 +17,7 @@
 	<div class="container">
 		<!-- Cleaning Schedule -->
 		<script>
-			function fetchJSONData() {
-				fetch("cleaningduty.json")
-					.then((res) => {
-						if (!res.ok) {
-							throw new Error
-								(`HTTP error! Status: ${res.status}`);
-						}
-						return res.json();
-					})
-					.then((data) =>
-						console.log(data))
-					.catch((error) =>
-						console.error("Unable to fetch data:", error));
-			}
+
 			fetchJSONData();
 
 			Date.prototype.GetFirstDayOfWeek = function () {
@@ -39,12 +26,18 @@
 			Date.prototype.GetLastDayOfWeek = function () {
 				return (new Date(this.setDate(this.getDate() - this.getDay() + 7)));
 			}
+			Date.prototype.GetFirstDayOfLastWeek = function () {
+				return (new Date(this.setDate(this.getDate() - this.getDay() + (this.getDay() == 0 ? -13 : 1))));
+			}
+			Date.prototype.GetLastDayOfLastWeek = function () {
+				return (new Date(this.setDate(this.getDate() - this.getDay() - 7)));
+			}
 
 			var today = new Date();
 
-			alert(today.GetFirstDayOfWeek());
+			alert(today.GetFirstDayOfLastWeek());
 
-			alert(today.GetLastDayOfWeek());
+			alert(today.GetLastDayOfLastWeek());
 
 		</script>
 	</div>
@@ -61,6 +54,22 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
+	<script>
+		function fetchJSONData() {
+			fetch("cleaningduty.json")
+				.then((res) => {
+					if (!res.ok) {
+						throw new Error
+							(`HTTP error! Status: ${res.status}`);
+					}
+					return res.json();
+				})
+				.then((data) =>
+					console.log(data))
+				.catch((error) =>
+					console.error("Unable to fetch data:", error));
+		}
+	</script>
 
 </body>
 
