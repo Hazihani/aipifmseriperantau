@@ -18,7 +18,7 @@
 		<!-- Cleaning Schedule -->
 		<script>
 
-			fetchJSONData();
+			const schedule = JSON.parse(fetchJSONScheduleData());
 
 			Date.prototype.GetFirstDayOfWeek = function () {
 				return (new Date(this.setDate(this.getDate() - this.getDay() + (this.getDay() == 0 ? -6 : 1))));
@@ -55,7 +55,7 @@
 		integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
 		crossorigin="anonymous"></script>
 	<script>
-		function fetchJSONData() {
+		function fetchJSONScheduleData() {
 			fetch("cleaningduty.json")
 				.then((res) => {
 					if (!res.ok) {
